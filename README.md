@@ -1,6 +1,6 @@
 # lafore-java
 
-That java code project covers [Data Structures & Algorithms in Java, 2/e by Robert W. Lafore](https://www.pearsoned.co.in/web/books/9788131718124_Data-Structures--Algorithms-in-Java_Robert-Lafore.aspx)
+That java code-project covers [Data Structures & Algorithms in Java, 2/e by Robert W. Lafore](https://www.pearsoned.co.in/web/books/9788131718124_Data-Structures--Algorithms-in-Java_Robert-Lafore.aspx)
 
 ## Start
 
@@ -32,6 +32,4 @@ make test
 make lint
 ```
 
-This repository is created and maintained as educational project.
-
-    by @motemere with love
+This repository is created and maintained as educational project by [@motemere](https://twitter.com/motemere) with love and coffee.

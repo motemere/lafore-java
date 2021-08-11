@@ -4,25 +4,23 @@ import java.util.Arrays;
 
 public class HighArray {
 
-  private final long[] arr;
+  private long[] arr;
   private int len;
-  private final int cap;
 
   public HighArray(long[] newArray) {
     this.arr = newArray;
-    this.len = 0;
-    this.cap = newArray.length;
+    this.len = newArray.length;
   }
 
   /**
    * Find value in array.
    *
-   * @param searchKey long
+   * @param value long
    * @return result boolean
    */
-  public boolean find(long searchKey) {
-    for (int i = 0; i < cap; i++) {
-      if (arr[i] == searchKey) {
+  public boolean find(long value) {
+    for (int i = 0; i < len; i++) {
+      if (arr[i] == value) {
         return true;
       }
     }
@@ -34,16 +32,18 @@ public class HighArray {
    * Insert new value to array.
    *
    * @param value long
-   * @return code int
+   * @return result boolean
    */
-  public int insert(long value) {
-    if (len < cap) {
-      arr[len] = value;
-      len++;
-      return 0;
-    }
+  public boolean insert(long value) {
+    long[] newArray = new long[len + 1];
+    System.arraycopy(arr, 0, newArray, 0, len);
 
-    return 1;
+    newArray[len] = value;
+    arr = newArray;
+
+    len++;
+
+    return arr[len - 1] == value;
   }
 
   /**
@@ -53,24 +53,21 @@ public class HighArray {
    * @return result boolean
    */
   public boolean delete(long value) {
-    int idx;
+    long[] newArray = new long[len - 1];
 
-    for (idx = 0; idx < len; idx++) {
-      if (value == arr[idx]) {
-        break;
+    int targetIdx = 0;
+
+    for (int i = 0; i < len; i++) {
+      if (arr[i] != value) {
+        newArray[targetIdx] = arr[i];
+        targetIdx++;
       }
     }
 
-    if (idx != len) {
-      for (int i = idx; i < len; i++) {
-        arr[i] = arr[i + 1];
-      }
+    arr = newArray;
+    len--;
 
-      len--;
-      return true;
-    }
-
-    return false;
+    return !find(value);
   }
 
   /**
@@ -85,8 +82,6 @@ public class HighArray {
         + Arrays.toString(arr)
         + ", len="
         + len
-        + ", cap="
-        + cap
         + '}';
   }
 }

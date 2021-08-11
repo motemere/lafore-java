@@ -22,9 +22,11 @@ class HighArrayTest {
 
   @Test
   void insert() {
+    assertTrue(arr.insert(1));
   }
 
   @Test
   void delete() {
+    assertTrue(arr.delete(2));
   }
 }

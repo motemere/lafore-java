@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build with Gradle
-        run: make test
+        run: make build

@@ -8,7 +8,7 @@ public class HelloWorld {
     Writer writer = new Writer() {
     };
 
-    writer.writeString(String.format("Hello, World from '%s' and special thx for Robert W. Lafore.",
+    writer.writeLine(String.format("Hello, World from '%s' and special thx for Robert W. Lafore.",
         HelloWorld.class));
   }
 }

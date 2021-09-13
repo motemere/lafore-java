@@ -16,6 +16,14 @@ class OrdArrayTest {
     array = new OrdArray(newArray);
   }
 
+  @SuppressWarnings("MagicNumber")
+  @Test
+  void findValueByBinarySearch() {
+    long[] arr = {1, 6, 3, 8, 12, 55, 73, 9, 4, 6, 17, 22, 46};
+    OrdArray ordArray = new OrdArray(arr);
+    assertEquals(ordArray.find(55L), 11);
+  }
+
   @Test
   void getArr() {
     long[] arr = {0, 0, 1, 1, 2};

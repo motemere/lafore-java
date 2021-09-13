@@ -14,6 +14,35 @@ public class OrdArray {
   }
 
   /**
+   * Binary search value in array.
+   *
+   * @param value long
+   * @return int index of value
+   */
+  public int find(long value) {
+    int firstIdx = 0;
+    int lastIdx = len - 1;
+
+    while (firstIdx <= lastIdx) {
+      int middleIdx = (firstIdx + lastIdx) / 2;
+
+      if (arr[middleIdx] == value) {
+        return middleIdx;
+      }
+
+      if (arr[middleIdx] < value) {
+        firstIdx = middleIdx + 1;
+      }
+
+      if (arr[middleIdx] > value) {
+        lastIdx = middleIdx - 1;
+      }
+    }
+
+    return -1;
+  }
+
+  /**
    * Bubble sort arr.
    */
   private void sort() {

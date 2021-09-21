@@ -1,6 +1,7 @@
 package me.motemere.code.array;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -32,5 +33,19 @@ class HighArrayTest {
   @DisplayName("Delete value")
   void delete() {
     assertTrue(arr.delete(2));
+  }
+
+  @Test
+  @DisplayName("Find max")
+  void getMax() {
+    assertEquals(arr.getMax(), 2L);
+  }
+
+  @Test
+  @DisplayName("Find max in empty array")
+  void getMaxInEmptyArr() {
+    long[] newArray = {};
+    arr = new HighArray(newArray);
+    assertEquals(arr.getMax(), -1L);
   }
 }

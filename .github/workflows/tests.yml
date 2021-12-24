@@ -20,6 +20,8 @@ jobs:
       - name: run tests
         run: make test
   hello-world-job:
+    needs:
+      - tests-job
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

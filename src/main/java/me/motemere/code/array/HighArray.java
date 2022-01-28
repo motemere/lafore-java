@@ -1,6 +1,8 @@
 package me.motemere.code.array;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
+import me.motemere.code.utils.IntLoopHandler;
 
 public class HighArray {
 
@@ -19,13 +21,7 @@ public class HighArray {
    * @return result boolean
    */
   public boolean find(long value) {
-    for (int i = 0; i < len; i++) {
-      if (arr[i] == value) {
-        return true;
-      }
-    }
-
-    return false;
+    return IntStream.range(0, len).anyMatch(i -> arr[i] == value);
   }
 
   /**
@@ -57,7 +53,7 @@ public class HighArray {
 
     int targetIdx = 0;
 
-    for (int i = 0; i < len; i++) {
+    for (int i : IntLoopHandler.range(0, len)) {
       if (arr[i] != value) {
         newArray[targetIdx] = arr[i];
         targetIdx++;
@@ -73,12 +69,12 @@ public class HighArray {
   /**
    * Find max value in array.
    *
-   * @return  max  long
+   * @return max  long
    */
   public long getMax() {
     long max = -1;
 
-    for (int i = 0; i < len; i++) {
+    for (int i : IntLoopHandler.range(0, len)) {
       if (arr[i] > max) {
         max = arr[i];
       }

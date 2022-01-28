@@ -14,7 +14,6 @@ class LowArrayTest {
   @BeforeEach
   void setUp() {
     arr = new LowArray(LENGTH_OF_ARR);
-
     arr.setElement(0, 1);
   }
 

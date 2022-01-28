@@ -1,6 +1,7 @@
 package me.motemere.code.array;
 
 import java.util.Arrays;
+import me.motemere.code.utils.IntLoopHandler;
 
 public class OrdArray {
 
@@ -20,6 +21,7 @@ public class OrdArray {
    * @return int index of value
    */
   public int find(long value) {
+
     int firstIdx = 0;
     int lastIdx = len - 1;
 
@@ -46,8 +48,8 @@ public class OrdArray {
    * Bubble sort arr.
    */
   private void sort() {
-    for (int i = 0; i < arr.length; i++) {
-      for (int j = 0; j < arr.length; j++) {
+    for (int i : IntLoopHandler.range(0, arr.length)) {
+      for (int j : IntLoopHandler.range(0, arr.length)) {
         if (arr[i] < arr[j]) {
           long temp = arr[i];
           arr[i] = arr[j];

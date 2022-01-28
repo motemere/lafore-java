@@ -1,5 +1,8 @@
 package me.motemere.code.array;
 
+import java.util.stream.IntStream;
+import me.motemere.code.utils.IntLoopHandler;
+
 public class LowArray {
 
   private final long[] arr;
@@ -11,7 +14,7 @@ public class LowArray {
   /**
    * Set element in array by idx.
    *
-   * @param idx int
+   * @param idx   int
    * @param value long
    */
   public void setElement(int idx, long value) {
@@ -42,22 +45,17 @@ public class LowArray {
    *
    * @param idx int
    * @return value long
-   * @throws IndexOutOfBoundsException  if index is out there
+   * @throws IndexOutOfBoundsException if index is out there
    */
   public long searchByIdx(int idx) throws IndexOutOfBoundsException {
-    if (!isExist(idx)) {
-      throw new IndexOutOfBoundsException("Index not found!");
-    }
 
-    long result = 0;
-
-    for (int i = 0; i < arr.length; i++) {
+    for (int i : IntLoopHandler.range(0, arr.length)) {
       if (i == idx) {
-        result = arr[i];
+        return arr[i];
       }
     }
 
-    return result;
+    throw new IndexOutOfBoundsException("Index not found!");
   }
 
   /**
@@ -68,22 +66,24 @@ public class LowArray {
    * @throws IndexOutOfBoundsException if index is out there
    */
   public int deleteByIdx(int idx) throws IndexOutOfBoundsException {
+
     if (!isExist(idx)) {
       throw new IndexOutOfBoundsException("Index not found!");
     }
 
-    for (int i = idx; i < arr.length - 1; i++) {
-      this.setElement(i, this.getElement(i + 1));
-    }
+    IntStream.range(idx, arr.length - 1)
+        .forEach(i -> this.setElement(i, this.getElement(i + 1)));
 
     return -1;
   }
 
+  /**
+   * Check if index is exist.
+   *
+   * @param idx int
+   * @return status boolean
+   */
   private boolean isExist(int idx) {
-    if (idx > arr.length - 1) {
-      return false;
-    }
-
-    return arr[idx] != 0;
+    return IntStream.range(0, arr.length).anyMatch(i -> i == idx);
   }
 }

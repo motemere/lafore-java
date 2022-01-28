@@ -2,6 +2,7 @@ package me.motemere.code.array;
 
 import java.util.Arrays;
 import me.motemere.code.model.Person;
+import me.motemere.code.utils.IntLoopHandler;
 
 /**
  * Array data structure for Person.
@@ -23,6 +24,7 @@ public class PersonArray {
    * @return result boolean
    */
   public boolean findPerson(Person anotherPerson) {
+
     for (int i = 0; i < len; i++) {
       if (arr[i].hashCode() == anotherPerson.hashCode()) {
         return true;
@@ -39,10 +41,9 @@ public class PersonArray {
    * @return result boolean
    */
   public boolean findPersonByLastName(String name) {
-    for (int i = 0; i < len; i++) {
-      if (arr[i].getLastName().equals(name)) {
-        return true;
-      }
+
+    for (int i : IntLoopHandler.range(0, len)) {
+      return arr[i].getLastName().equals(name);
     }
 
     return false;
@@ -54,6 +55,7 @@ public class PersonArray {
    * @param person Person
    */
   public void insert(Person person) {
+
     Person[] newArray = new Person[len + 1];
     System.arraycopy(arr, 0, newArray, 0, len);
 
@@ -70,6 +72,7 @@ public class PersonArray {
    * @return result boolean
    */
   public boolean deletePersonByLastName(String name) {
+
     Person[] newArray = new Person[len - 1];
 
     if (newArray.length == 0) {
@@ -80,12 +83,11 @@ public class PersonArray {
 
     int targetIdx = 0;
 
-    for (int i = 0; i < len; i++) {
-      if (arr[i].getLastName().equals(name)) {
-        continue;
+    for (int i : IntLoopHandler.range(0, len)) {
+      if (!arr[i].getLastName().equals(name)) {
+        newArray[targetIdx] = arr[i];
+        targetIdx++;
       }
-      newArray[targetIdx] = arr[i];
-      targetIdx++;
     }
 
     arr = newArray;

@@ -6,7 +6,7 @@ import me.motemere.code.utils.IntLoopHandler;
 
 public class HighArray {
 
-  private long[] arr;
+  protected long[] arr;
   private int len;
 
   public HighArray(long[] newArray) {
@@ -72,7 +72,7 @@ public class HighArray {
    * @return max  long
    */
   public long getMax() {
-    long max = -1;
+    long max = Long.MIN_VALUE;
 
     for (int i : IntLoopHandler.range(0, len)) {
       if (arr[i] > max) {
@@ -80,6 +80,17 @@ public class HighArray {
       }
     }
 
+    return arr.length == 0 ? -1 : max;
+  }
+
+  /**
+   * Find and delete max value in array.
+   *
+   * @return max  long
+   */
+  public long removeMax() {
+    long max = getMax();
+    delete(max);
     return max;
   }
 

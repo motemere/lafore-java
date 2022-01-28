@@ -1,7 +1,8 @@
 package me.motemere.code.array;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -47,5 +48,12 @@ class HighArrayTest {
     long[] newArray = {};
     arr = new HighArray(newArray);
     assertEquals(arr.getMax(), -1L);
+  }
+
+  @Test
+  @DisplayName("Find and delete max")
+  void removeMax() {
+    long max = arr.removeMax();
+    assertFalse(arr.find(max));
   }
 }

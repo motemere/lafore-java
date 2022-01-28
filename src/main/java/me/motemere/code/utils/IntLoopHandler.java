@@ -45,4 +45,25 @@ public class IntLoopHandler {
       }
     };
   }
+
+  /**
+   * Returns the reverse range of integers from exclusive to inclusive.
+   *
+   * @param fromExclusive initial value (exclusive).
+   * @param toInclusive   final value (included).
+   * @return Iterable, containing numbers from fromInclusive to toExclusive.
+   */
+  public static Iterable<Integer> rangeReversedClosed(int fromExclusive, int toInclusive) {
+    return () -> new Iterator<>() {
+      private int cursor = fromExclusive - 1;
+
+      public boolean hasNext() {
+        return cursor >= toInclusive;
+      }
+
+      public Integer next() {
+        return cursor--;
+      }
+    };
+  }
 }

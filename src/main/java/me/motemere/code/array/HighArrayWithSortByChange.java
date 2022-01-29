@@ -18,7 +18,7 @@ public class HighArrayWithSortByChange extends HighArray {
   private void sortByChange() {
 
     for (int i : IntLoopHandler.rangeReversedClosed(sortedArr.length, 0)) {
-      if (arr.length == 0) {
+      if (super.getArr().length == 0) {
         break;
       }
 

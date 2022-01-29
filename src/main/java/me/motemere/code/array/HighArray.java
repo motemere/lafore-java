@@ -6,12 +6,21 @@ import me.motemere.code.utils.IntLoopHandler;
 
 public class HighArray {
 
-  protected long[] arr;
+  private long[] arr;
   private int len;
 
   public HighArray(long[] newArray) {
     this.arr = newArray;
     this.len = newArray.length;
+  }
+
+  /**
+   * Getter for array.
+   *
+   * @return arr long[]
+   */
+  public long[] getArr() {
+    return arr;
   }
 
   /**

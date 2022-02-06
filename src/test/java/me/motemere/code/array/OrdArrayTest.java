@@ -16,9 +16,7 @@ class OrdArrayTest {
   @BeforeEach
   void setUp() {
     nominalArray = new long[]{1, 3, 4, 6, 6, 8, 9, 12, 17, 22, 46, 55, 73};
-
-    long[] newArray = {1, 6, 3, 8, 12, 55, 73, 9, 4, 6, 17, 22, 46};
-    ordArray = new OrdArray(newArray);
+    ordArray = new OrdArray(new long[]{1, 6, 3, 8, 12, 55, 73, 9, 4, 6, 17, 22, 46});
   }
 
   @Test

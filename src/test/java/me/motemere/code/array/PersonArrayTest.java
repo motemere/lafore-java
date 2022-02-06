@@ -24,7 +24,7 @@ class PersonArrayTest {
 
   @Test
   void findPerson() {
-    Person person = new Person("Velasquez", "Jose", 72);
+    var person = new Person("Velasquez", "Jose", 72);
     assertTrue(arr.findPerson(person));
   }
 
@@ -35,7 +35,7 @@ class PersonArrayTest {
 
   @Test
   void insert() {
-    Person person = new Person("Lamarque", "Henry", 54);
+    var person = new Person("Lamarque", "Henry", 54);
     arr.insert(person);
     assertTrue(arr.findPerson(person));
   }

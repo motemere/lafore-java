@@ -13,15 +13,14 @@ class HighArrayWithSortByChangeTest {
 
   @BeforeEach
   void setUp() {
-    long[] newArray = {3, 1, 2, -2, 5};
-    highArray = new HighArrayWithSortByChange(newArray);
+    highArray = new HighArrayWithSortByChange(new long[]{3, 1, 2, -2, 5});
   }
 
   @Test
   @DisplayName("Get sorted array")
   void getSortedArr() {
-    long[] expected = {-2, 1, 2, 3, 5};
-    long[] actual = highArray.getSortedArr();
+    var expected = new long[]{-2, 1, 2, 3, 5};
+    var actual = highArray.getSortedArr();
     assertArrayEquals(expected, actual);
   }
 }

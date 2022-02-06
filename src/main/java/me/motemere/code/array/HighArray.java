@@ -40,7 +40,7 @@ public class HighArray {
    * @return result boolean
    */
   public boolean insert(long value) {
-    long[] newArray = new long[len + 1];
+    var newArray = new long[len + 1];
     System.arraycopy(arr, 0, newArray, 0, len);
 
     newArray[len] = value;
@@ -58,9 +58,9 @@ public class HighArray {
    * @return result boolean
    */
   public boolean delete(long value) {
-    long[] newArray = new long[len - 1];
+    var newArray = new long[len - 1];
 
-    int targetIdx = 0;
+    var targetIdx = 0;
 
     for (int i : IntLoopHandler.range(0, len)) {
       if (arr[i] != value) {
@@ -81,7 +81,7 @@ public class HighArray {
    * @return max  long
    */
   public long getMax() {
-    long max = Long.MIN_VALUE;
+    var max = Long.MIN_VALUE;
 
     for (int i : IntLoopHandler.range(0, len)) {
       if (arr[i] > max) {
@@ -98,7 +98,7 @@ public class HighArray {
    * @return max  long
    */
   public long removeMax() {
-    long max = getMax();
+    var max = getMax();
     delete(max);
     return max;
   }

@@ -56,7 +56,7 @@ public class PersonArray {
    */
   public void insert(Person person) {
 
-    Person[] newArray = new Person[len + 1];
+    var newArray = new Person[len + 1];
     System.arraycopy(arr, 0, newArray, 0, len);
 
     newArray[len] = person;
@@ -73,7 +73,7 @@ public class PersonArray {
    */
   public boolean deletePersonByLastName(String name) {
 
-    Person[] newArray = new Person[len - 1];
+    var newArray = new Person[len - 1];
 
     if (newArray.length == 0) {
       arr = newArray;

@@ -14,8 +14,7 @@ class HighArrayTest {
 
   @BeforeEach
   void setUp() {
-    long[] newArray = {0, 1, 2};
-    arr = new HighArray(newArray);
+    arr = new HighArray(new long[]{0, 1, 2});
   }
 
   @Test
@@ -45,7 +44,7 @@ class HighArrayTest {
   @Test
   @DisplayName("Find max in empty array")
   void getMaxInEmptyArr() {
-    long[] newArray = {};
+    var newArray = new long[]{};
     arr = new HighArray(newArray);
     assertEquals(arr.getMax(), -1L);
   }

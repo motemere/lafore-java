@@ -1,6 +1,8 @@
 # lafore-java
 
 [![tests](https://github.com/motemere/lafore-java/actions/workflows/tests.yml/badge.svg)](https://github.com/motemere/lafore-java/actions/workflows/tests.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/6617d66a02894337cd5b/maintainability)](https://codeclimate.com/github/motemere/lafore-api/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/6617d66a02894337cd5b/test_coverage)](https://codeclimate.com/github/motemere/lafore-api/test_coverage)
 
 That java code-project covers [Data Structures & Algorithms in Java, 2/e by Robert W. Lafore](https://www.pearsoned.co.in/web/books/9788131718124_Data-Structures--Algorithms-in-Java_Robert-Lafore.aspx)
 

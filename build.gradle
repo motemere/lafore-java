@@ -10,7 +10,7 @@ group = "me.motemere"
 version = "1.0-SNAPSHOT"
 
 application {
-    mainClass = "me.motemere.code.HelloWorld"
+    mainClass = "me.motemere.code.app.App"
 }
 
 compileJava {

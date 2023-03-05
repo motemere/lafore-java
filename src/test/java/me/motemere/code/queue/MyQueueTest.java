@@ -6,7 +6,8 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class MyQueueTest {
 
@@ -19,14 +20,14 @@ class MyQueueTest {
 
   @Test
   void createFromList() {
-    List<String> list = new ArrayList<>();
-    list.add("Bob Marley - Redemption Song");
-    list.add("Metallica - Nothing Else Matters");
-    list.add("Frank Sinatra - Silver Bells");
+    List<String> stringList = new ArrayList<>();
+    stringList.add("Bob Marley - Redemption Song");
+    stringList.add("Metallica - Nothing Else Matters");
+    stringList.add("Frank Sinatra - Silver Bells");
 
-    MyQueue queue = new MyQueue(list);
+    MyQueue myQueue = new MyQueue(stringList);
 
-    assertEquals("Bob Marley - Redemption Song", queue.peek());
+    assertEquals("Bob Marley - Redemption Song", myQueue.peek());
   }
 
   @Test

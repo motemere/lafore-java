@@ -3,7 +3,7 @@ package me.motemere.code.store;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class KeyValueTest {
 
@@ -40,5 +40,4 @@ class KeyValueTest {
   void testToString() {
     assertEquals("KeyValue{key='key', value='value'}", keyValue.toString());
   }
-
 }

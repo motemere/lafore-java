@@ -1,5 +1,5 @@
 plugins {
-    id "io.freefair.lombok" version "6.3.0"
+    id "io.freefair.lombok" version "8.4"
     id "java"
     id "application"
     id "checkstyle"
@@ -7,14 +7,16 @@ plugins {
 }
 
 group = "me.motemere"
-version = "0.0.2"
+version = "0.0.3"
 
 application {
     mainClass = "me.motemere.code.app.App"
 }
 
-compileJava {
-    options.release = 17
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
 }
 
 repositories {
@@ -22,25 +24,27 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
-    testImplementation group: "com.google.truth", name: "truth", version: "1.1.3"
-    testImplementation group: "org.mockito", name: "mockito-core", version: "3.12.4"
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.13.3'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.13.3'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.13.3'
 
-    testImplementation 'org.assertj:assertj-core:3.23.1'
+    testImplementation group: "com.google.truth", name: "truth", version: "1.4.4"
+    testImplementation group: "org.mockito", name: "mockito-core", version: "5.18.0"
 
-    compileOnly 'org.projectlombok:lombok:1.18.24'
-    annotationProcessor "org.projectlombok:lombok:1.18.24"
+    testImplementation 'org.assertj:assertj-core:3.27.3'
 
-    testCompileOnly "org.projectlombok:lombok:1.18.24"
-    testAnnotationProcessor "org.projectlombok:lombok:1.18.24"
+    compileOnly 'org.projectlombok:lombok:1.18.38'
+    annotationProcessor "org.projectlombok:lombok:1.18.38"
+
+    testCompileOnly "org.projectlombok:lombok:1.18.38"
+    testAnnotationProcessor "org.projectlombok:lombok:1.18.38"
 }
 
-test {
+tasks.named('test') {
     useJUnitPlatform()
 }
 
 checkstyle {
     configFile = file("config/checkstyle/checkstyle.xml")
-    toolVersion "8.41"
+    toolVersion "10.26.1"
 }

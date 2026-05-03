@@ -24,11 +24,11 @@ jobs:
       - name: Run tests with coverage
         run: make test
 
-#      - name: Generate JaCoCo report
-#        run: ./gradlew jacocoTestReport
-#
-#      - name: SonarCloud analysis
-#        uses: SonarSource/sonarqube-scan-action@master
-#        env:
-#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-#          SONAR_HOST_URL: https://sonarcloud.io
+      - name: Generate JaCoCo report
+        run: ./gradlew jacocoTestReport
+
+      - name: SonarCloud analysis
+        uses: SonarSource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: https://sonarcloud.io

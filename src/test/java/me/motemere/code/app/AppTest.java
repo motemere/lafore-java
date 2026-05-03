@@ -11,19 +11,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AppTest {
 
-  @Test
-  @DisplayName("Main method")
-  void main() {
-    ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(outContent));
+    @Test
+    @DisplayName("Main method")
+    void main() {
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
 
-    App.main(null);
+        App.main(null);
 
-    String expected = String.format(
-        "Hello, World from '%s' and special thx for Robert W. Lafore.",
-        App.class
-    );
+        String expected = String.format(
+                "Hello, World from '%s' and special thx for Robert W. Lafore.",
+                App.class
+        );
 
-    assertEquals(expected, outContent.toString().trim());
-  }
+        assertEquals(expected, outContent.toString().trim());
+    }
 }

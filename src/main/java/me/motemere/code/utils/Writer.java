@@ -5,21 +5,21 @@ package me.motemere.code.utils;
  */
 public interface Writer {
 
-  /**
-   * Write line.
-   *
-   * @param out String.
-   */
-  default void writeLine(String out) {
-    System.out.println(out);
-  }
+    /**
+     * Write line.
+     *
+     * @param out String.
+     */
+    default void writeLine(String out) {
+        System.out.println(out);
+    }
 
-  /**
-   * Write string.
-   *
-   * @param out String.
-   */
-  default void writeString(String out) {
-    System.out.print(out);
-  }
+    /**
+     * Write string.
+     *
+     * @param out String.
+     */
+    default void writeString(String out) {
+        System.out.print(out);
+    }
 }

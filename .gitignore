@@ -7,3 +7,6 @@ build
 **/logs/
 
 .idea
+/.secrets
+/.scannerwork/
+/bin/
